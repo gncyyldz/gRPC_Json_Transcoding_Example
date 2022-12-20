@@ -2,16 +2,10 @@ syntax = "proto3";
 
 option csharp_namespace = "gRPC_Server";
 
-import "google/api/annotations.proto";
-
 package message;
 
 service Message {
-  rpc SendMessage (MessageRequest) returns (stream MessageReply){
-    option (google.api.http) = {
-      get: "/message/{text}"
-    };
-  };
+  rpc SendMessage (MessageRequest) returns (stream MessageReply);
 }
 
 message MessageRequest {
