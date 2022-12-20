@@ -1,9 +1,9 @@
 ﻿using Grpc.Net.Client;
-using gRPC_Server;
+using gRPC_Client;
 
 var channel = GrpcChannel.ForAddress("https://localhost:7018");
 var messageClient = new Message.MessageClient(channel);
-var response = messageClient.SendMessage(new () { Text = "Mesajlar alınamaya başlıyor." });
+var response = messageClient.SendMessage(new() { Text = "Mesajlar alınamaya başlıyor." });
 
 CancellationTokenSource cancellationToken = new();
 await Task.Run(async () =>
