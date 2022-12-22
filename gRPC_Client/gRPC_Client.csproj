@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Protos\message.proto" />
+    <None Remove="Protos\person.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\message.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\person.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

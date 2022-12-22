@@ -17,9 +17,12 @@ namespace gRPC_Server.Services
             Random random = new();
             await Task.Run(async () =>
             {
-                while (true)
+                int count = random.Next(3, 10);
+                while (count-- > 0)
                 {
-                    await responseStream.WriteAsync(new() { Text = (random.Next() * random.Next()).ToString() });
+                    string text = (random.Next() * random.Next()).ToString();
+                    await responseStream.WriteAsync(new() { Text = text });
+                    Console.WriteLine($"{text} gönderilmiþtir.");
                     await Task.Delay(1000);
                 }
             });

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPC_Server";
+
+import "google/api/annotations.proto";
+
+package person;
+
+//Person service
+service Person {
+    //Person creater service
+  rpc CreatePerson (PersonRequest) returns (PersonResponse){
+    option (google.api.http) = {
+      post: "/persons",
+      body : "*"
+    };
+  };
+}
+message PersonRequest {
+    //Person name
+  string name = 1;
+  string surname = 2;
+}
+
+message PersonResponse {
+  string message = 1;
+}

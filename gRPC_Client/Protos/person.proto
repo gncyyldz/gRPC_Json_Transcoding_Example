@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPC_Client";
+
+package person;
+
+service Person {
+  rpc CreatePerson (PersonRequest) returns (PersonResponse);
+}
+message PersonRequest {
+  string name = 1;
+  string surname = 2;
+}
+
+message PersonResponse {
+  string message = 1;
+}

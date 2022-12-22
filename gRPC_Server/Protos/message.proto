@@ -13,7 +13,6 @@ service Message {
     };
   };
 }
-
 message MessageRequest {
   string text = 1;
 }
